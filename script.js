@@ -214,7 +214,7 @@ const projectDetails = {
   ev: {
     label: 'Real-People Content',
     title: 'Proton EVs',
-    description: 'Created people-focused video content for EV car promotion during my marketing internship at CS Automotive Group.',
+    description: 'Created people-focused video content for EVs promotion during my marketing internship at CS Automotive Group.',
   },
   emas: {
     label: 'Promotional Teaser',
