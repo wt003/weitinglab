@@ -117,10 +117,7 @@ document.querySelectorAll('[data-video-preview]').forEach(cover => {
         }
       })();
       await state.ready;
-      if (state.wantsPlay) {
-        await state.player.setCurrentTime(previewStart);
-        if (state.wantsPlay) await state.player.play();
-      }
+      if (state.wantsPlay) await state.player.play();
     } catch (_) {
       state.wantsPlay = false;
       sync(false);

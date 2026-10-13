@@ -100,7 +100,5 @@
 .project-cover-open{position:absolute;inset:0;z-index:2;width:100%;height:100%;border:0;padding:0;background:transparent;cursor:pointer;color:var(--red)}
 .project-cover-open:focus-visible{outline:3px solid var(--red);outline-offset:-5px}
 
-.card-bullet .project-card-media>img{object-position:center top}
-.card-bullet .vimeo-preview-frame{top:0;transform:none}
 
 .vimeo-preview-error{pointer-events:none}
