@@ -1,4 +1,3 @@
-# weitinglab
 A personal portfolio showcasing my work in content creation, AI-assisted storytelling, promotional videos, and campaign design.
 
 ## Featured Work
