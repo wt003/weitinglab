@@ -12,7 +12,7 @@ A personal portfolio showcasing my work in content creation, AI-assisted storyte
 ## Repository Structure
 
 ```text
-assets/       Images, video covers, and project visuals
+assets        Images, video covers, and project visuals
 index.html    Page content and project galleries
 tomato.css    Styling and responsive layouts
 script.js     Interactions, project dialogs, and Vimeo players
