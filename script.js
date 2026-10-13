@@ -214,7 +214,9 @@ const projectDetails = {
   ev: {
     label: 'Real-People Content',
     title: 'Proton EVs',
-    description: 'Created people-focused video content for EVs promotion during my marketing internship at CS Automotive Group.',
+    description: 'Created people-focused video content for Proton EVs during my marketing internship at CS Automotive Group. Managed the end-to-end content creation process, from research and creative ideation to filming, video editing, and publishing on the company‘s social media account, while also using AI to assist with information organisation and scriptwriting.
+
+**Instagram:** [@protonemaspenangjuru](https://www.instagram.com/protonemaspenangjuru/)',
   },
   emas: {
     label: 'Promotional Teaser',
