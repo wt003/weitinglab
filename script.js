@@ -184,9 +184,13 @@ const projectDetails = {
     label: 'AIGC',
     title: 'Bullet Time',
     description: 'A fashion film that transforms an unexpected street encounter into a suspended moment. Following a brief collision, sunglasses, a coffee cup and a handbag become the focus of slow-motion close-ups, highlighting material textures, flowing liquid and movement.',
-    paragraphs: [
+    introParagraphs: [
       'The project explores AI-assisted visual storytelling through character development, multi-angle product references and iterative shot direction.',
-      'Tools: Pinterest, Codex, Libtv (Seedance 2.0)'
+    ],
+    tools: [
+      '<strong>Pinterest:</strong> Researched fashion references and product visuals.',
+      '<strong>Codex:</strong> Assisted with character development, visual concept planning, and refining shot directions and prompts.',
+      '<strong>LibTV (Seedance 2.0):</strong> Generated AI-powered video sequences, incorporating slow-motion effects, detailed product close-ups, and cinematic visual elements.',
     ],
   },
   ev: {
@@ -256,6 +260,7 @@ document.querySelectorAll('[data-open-project]').forEach((button) => {
         <h2>${details.title}</h2>
         <div class="project-detail-rule"></div>
         <p class="project-detail-description">${details.description}</p>
+        ${(details.introParagraphs || []).map(paragraph => `<p class="project-detail-description">${paragraph}</p>`).join('')}
         ${details.tools?.length ? `<p class="project-detail-description"><strong>Tools Used:</strong></p><ul class="project-detail-tools">${details.tools.map(tool => `<li>${tool}</li>`).join('')}</ul>` : ''}
         ${(details.paragraphs || []).map(paragraph => `<p class="project-detail-description">${paragraph}</p>`).join('')}
         <p class="project-detail-media-label">Project media</p>
