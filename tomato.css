@@ -93,3 +93,6 @@
 .ev-media figcaption a{text-underline-offset:3px;overflow-wrap:anywhere}
 .ev-media .vimeo-landscape{aspect-ratio:16/9}
 @media(max-width:640px){.ev-media{grid-template-columns:1fr;gap:32px;width:calc(100% - 36px)}.ev-media .vimeo-landscape{aspect-ratio:16/9}.ev-media figcaption>strong{font-size:18px}}
+
+.project-detail-tools{margin:10px 0 19px;padding-left:22px;font-size:16px;line-height:1.85;color:#765d4c}.project-detail-tools li+li{margin-top:8px}
+@media(max-width:640px){.project-detail-tools{font-size:15px;line-height:1.75}}

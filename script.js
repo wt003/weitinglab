@@ -200,7 +200,14 @@ const projectDetails = {
   emas: {
     label: 'Promotional Teaser',
     title: 'e.MAS 5',
-    description: 'A teaser concept designed around a receipt-style visual, using an everyday purchase receipt as a creative way to hint at the upcoming Proton e.MAS 5 EV car launch.',
+    description: '<strong>Creative Concept:</strong> A teaser design inspired by everyday shopping receipts, using a unique receipt-style visual to creatively hint at the upcoming launch of the Proton e.MAS 5 EV. The concept combines a minimalist layout with playful design elements to build curiosity, create anticipation, and capture the audience’s attention.',
+    tools: [
+      '<strong>Pinterest:</strong> Gathered creative inspiration and explored design elements.',
+      '<strong>Canva:</strong> Designed and animated the teaser visual, incorporating dynamic motion effects and graphic elements to create the final promotional artwork.',
+    ],
+    paragraphs: [
+      'Instagram: <a href="https://www.instagram.com/protonemaspenangjuru/" target="_blank" rel="noopener noreferrer">@protonemaspenangjuru</a>',
+    ],
   },
   wicked: {
     label: 'Wickedly Welsh Chocolate',
@@ -249,6 +256,7 @@ document.querySelectorAll('[data-open-project]').forEach((button) => {
         <h2>${details.title}</h2>
         <div class="project-detail-rule"></div>
         <p class="project-detail-description">${details.description}</p>
+        ${details.tools?.length ? `<p class="project-detail-description"><strong>Tools Used:</strong></p><ul class="project-detail-tools">${details.tools.map(tool => `<li>${tool}</li>`).join('')}</ul>` : ''}
         ${(details.paragraphs || []).map(paragraph => `<p class="project-detail-description">${paragraph}</p>`).join('')}
         <p class="project-detail-media-label">Project media</p>
       `;
