@@ -81,3 +81,14 @@
   height: 100%;
   z-index: 2;
 }
+
+/* EV videos: two aligned columns, with each caption directly below its video. */
+.ev-media{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:36px 28px;max-width:920px}
+.ev-media figure{min-width:0}
+.ev-media .vimeo-embed{width:100%;aspect-ratio:9/16;border-radius:8px;background:#171313}
+.ev-media .vimeo-play img{object-fit:contain}
+.ev-media figcaption{max-width:none;margin:18px 0 0}
+.ev-media figcaption>strong{display:block;font-size:20px;line-height:1.4}
+.ev-media figcaption a{text-underline-offset:3px;overflow-wrap:anywhere}
+.ev-media .vimeo-landscape{aspect-ratio:16/9}
+@media(max-width:640px){.ev-media{grid-template-columns:1fr;gap:32px;width:calc(100% - 36px)}.ev-media .vimeo-landscape{aspect-ratio:16/9}.ev-media figcaption>strong{font-size:18px}}

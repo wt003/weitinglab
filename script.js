@@ -30,6 +30,7 @@ const videoSources = {
   'ev-car': { id: '1235279971', title: 'EV Car Cannot Run?' },
   'ev-maintenance': { id: '1235279950', title: 'EV Maintenance' },
   'ev-range': { id: '1235279994', title: 'EV Battery Range' },
+  'ev-test-drive': { id: '1235346897', title: 'EV Test Drive — Variety Show Style' },
   emas: { id: '1235280141', title: 'e.MAS 5' },
   'personal-content': { id: '1235279857', title: 'Personal Content' },
 };
