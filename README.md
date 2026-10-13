@@ -21,10 +21,6 @@ script.js     Interactions, project dialogs, and Vimeo players
 README.md     Project overview
 ```
 
-## Local Preview
-
-Download or clone this repository and open `index.html` in a browser.
-
 ## Contact
 
 Email: twting0304@gmail.com
