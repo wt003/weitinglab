@@ -67,3 +67,17 @@
 .project-card-media[aria-busy="true"] .preview-toggle{opacity:1;animation:vimeo-pulse 1s ease-in-out infinite}
 .vimeo-preview-error{position:absolute;left:12px;bottom:12px;z-index:3;padding:8px 10px;border-radius:18px;background:var(--cream);color:var(--red);font-size:12px;text-decoration:none}
 @keyframes vimeo-pulse{50%{opacity:.5}}
+
+/* Hide original cover and play button after Vimeo loads */
+.vimeo-embed:has(iframe) > .vimeo-play {
+  display: none;
+}
+
+/* Keep Vimeo player visible and interactive */
+.vimeo-embed > iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
