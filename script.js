@@ -200,7 +200,7 @@ const projectDetails = {
   emas: {
     label: 'Promotional Teaser',
     title: 'e.MAS 5',
-    description: '<strong>Creative Concept:</strong> A teaser design inspired by everyday shopping receipts, using a unique receipt-style visual to creatively hint at the upcoming launch of the Proton e.MAS 5 EV. The concept combines a minimalist layout with playful design elements to build curiosity, create anticipation, and capture the audience’s attention.',
+    description: 'A teaser design inspired by everyday shopping receipts, using a unique receipt-style visual to creatively hint at the upcoming launch of the Proton e.MAS 5 EV. The concept combines a minimalist layout with playful design elements to build curiosity, create anticipation, and capture the audience’s attention.',
     tools: [
       '<strong>Pinterest:</strong> Gathered creative inspiration and explored design elements.',
       '<strong>Canva:</strong> Designed and animated the teaser visual, incorporating dynamic motion effects and graphic elements to create the final promotional artwork.',
