@@ -22,30 +22,7 @@ document.querySelectorAll('[data-tilt]').forEach((card) => {
   card.addEventListener('pointerleave', () => { card.style.transform = ''; });
 });
 
-const countUp = (element) => {
-  const target = Number(element.dataset.count);
-  const suffix = element.dataset.suffix || '';
-  const start = performance.now();
-  const duration = 1200;
-  const render = (now) => {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const value = target * eased;
-    element.textContent = `${target % 1 ? value.toFixed(1) : Math.round(value).toLocaleString()}${suffix}`;
-    if (progress < 1) requestAnimationFrame(render);
-  };
-  requestAnimationFrame(render);
-};
-
-const metricObserver = new IntersectionObserver((entries, currentObserver) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    entry.target.querySelectorAll('[data-count]').forEach(countUp);
-    currentObserver.unobserve(entry.target);
-  });
-}, { threshold: .35 });
-const metricCard = document.querySelector('.metric-card');
-if (metricCard) metricObserver.observe(metricCard);
+// Metrics are rendered in HTML so their values never depend on animation or script loading.
 
 // Vimeo IDs are kept in one place; local covers remain unchanged.
 const videoSources = {
