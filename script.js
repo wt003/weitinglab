@@ -89,17 +89,12 @@ const playVimeoEmbed = (host, key) => {
     player.on('play', () => mountedPlayers.forEach(other => { if (other !== player) other.pause().catch(() => {}); }));
   }).catch(() => {}); // The native embedded controls still work without the SDK.
 };
-// Covers play independently; captions open the complete project.
+// Hover previews are decorative; cover buttons and captions open the complete project.
 document.querySelectorAll('[data-video-preview]').forEach(cover => {
-  const toggle = cover.querySelector('.preview-toggle');
-  const label = toggle.getAttribute('aria-label').replace(/^Play /, '');
   const state = { cover, player: null, ready: null, wantsPlay: false, pinned: false };
   previewStates.push(state);
   const previewStart = Number(cover.dataset.previewStart || 0);
   const sync = playing => {
-    toggle.setAttribute('aria-pressed', String(playing));
-    toggle.setAttribute('aria-label', `${playing ? 'Pause' : 'Play'} ${label}`);
-    toggle.firstElementChild.textContent = playing ? 'Ⅱ' : '▶';
     cover.classList.toggle('is-playing', playing);
   };
   const play = async () => {
@@ -122,24 +117,22 @@ document.querySelectorAll('[data-video-preview]').forEach(cover => {
         }
       })();
       await state.ready;
-      if (state.wantsPlay) await state.player.play();
+      if (state.wantsPlay) {
+        await state.player.setCurrentTime(previewStart);
+        if (state.wantsPlay) await state.player.play();
+      }
     } catch (_) {
       state.wantsPlay = false;
       sync(false);
       if (!cover.querySelector('.vimeo-preview-error')) {
-        const link = document.createElement('a');
-        link.className = 'vimeo-preview-error';
-        link.href = `https://vimeo.com/${videoSources[cover.dataset.videoPreview].id}`;
-        link.target = '_blank'; link.rel = 'noopener';
-        link.textContent = 'Watch on Vimeo ↗';
-        cover.append(link);
+        const hint = document.createElement('span');
+        hint.className = 'vimeo-preview-error';
+        hint.textContent = 'View project ↗';
+        hint.setAttribute('aria-hidden', 'true');
+        cover.append(hint);
       }
     } finally { cover.removeAttribute('aria-busy'); }
   };
-  toggle.addEventListener('click', () => {
-    if (toggle.getAttribute('aria-pressed') === 'true' || (state.pinned && state.wantsPlay)) pausePreview(state);
-    else { state.pinned = true; if (!state.wantsPlay) play(); }
-  });
   cover.addEventListener('pointerenter', event => {
     if (event.pointerType === 'mouse' && !matchMedia('(prefers-reduced-motion: reduce)').matches) play();
   });
